@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motivator</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Welcome to Your Motivator</h1>
+    
+    <form method="POST">
+        <label for="feeling">How are you feeling?</label>
+        <select name="feeling" id="feeling">
+            <option value="stuck">Stuck</option>
+            <option value="tired">Tired</option>
+            <option value="bored">Bored</option>
+            <option value="lazy">Lazy</option>
+            <option value="distracted">Distracted</option>
+        </select>
+        <button type="submit">Get Motivation</button>
+    </form>
+
+    {% if message %}
+        <h2>{{ message }}</h2>  <!-- This will display the motivation message -->
+    {% endif %}
+
+</body>
+</html>
